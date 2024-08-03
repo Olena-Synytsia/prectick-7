@@ -28,3 +28,21 @@ export async function createContact(body) {
     console.log(error);
   }
 }
+
+export async function putContact(id, body) {
+  try {
+    const { data } = await axios.put(`${BASE_URL}/contacts/${id}`, body);
+    return data;
+  } catch {
+    console.log(error);
+  }
+}
+
+export async function deletContact(id) {
+  try {
+    const { data } = await axios.delete(`${BASE_URL}/contacts/${id}`);
+    return data;
+  } catch {
+    console.log(error);
+  }
+}
